@@ -103,6 +103,73 @@
             .paribahan-area{
                 @apply py-28 bg-[#F7F8F8] border-t-[2px] border-t-green-color rounded-t-[88px];
             }
+            .paribahan-info{
+                @apply bg-white p-8 rounded-3xl relative grid grid-cols-2 items-center gap-20;
+            }
+            .paribahan-info::before{
+                @apply absolute content-[''] right-[218px] top-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+            }
+            .paribahan-info::after{
+                @apply absolute content-[''] h-[75%] w-[1px] bg-transparent border-[2px] border-dashed border-green-color right-[257px] top-[50%] translate-y-[-50%];
+            }
+            .paribahan-info-ball{
+                @apply absolute right-[218px] bottom-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+            }
+            .paribahan-info-start{
+                @apply col-start-1 col-end-9;
+            }
+            .paribahan-top{
+                @apply flex items-center justify-between w-full mb-6;
+            }
+            .paribahan-top h3{
+                @apply font-bold text-3xl text-dark-color ml-2;
+            }
+            .paribahan-top p{
+                @apply inter-font font-normal text-lg text-dark-color/[.6] ml-2;
+            }
+            .paribahan-info-main{
+                @apply  rounded-3xl bg-[#F7F8F8] p-8 pt-2;
+            }
+            .paribahan-info-main-content{
+                @apply mt-6 pb-6 border-b border-dashed border-dark-color/[.2] flex items-center w-full justify-between; 
+            }
+            .paribahan-info-main-content h6,
+            .paribahan-info-main-content p{
+                @apply font-semibold text-lg text-dark-color/[.6];
+            }
+            .paribahan-info-main-content h6{
+                @apply text-dark-color;
+            }
+            .paribahan-info-end{
+                @apply col-start-9 col-end-13;
+            }
+            .paribahan-info-end h4{
+                @apply font-bold text-3xl text-dark-color my-4;
+            }
+            .paribahan-info-end p{
+                @apply font-semibold text-2xl text-dark-color/[.6];
+            }
+            .footer{
+                @apply py-28 bg-dark-color;
+            }
+            .footer-top{
+                @apply mb-12 flex justify-between items-center w-full;
+            }
+            .footer-top p{
+                @apply inter-font text-white/[.8] font-normal text-lg max-w-[374px];
+            }
+            .footer-top h6{
+                @apply font-semibold text-xl text-white;
+            }
+            .footer-bottom{
+                @apply pt-8 border-t border-dashed border-white/[.3] w-full flex justify-between items-center;
+            }
+            .footer-bottom p{
+                @apply font-normal text-[16px] text-white/[.7] inter-font;
+            }
+            .footer-bottom a{
+                @apply font-medium text-[16px] text-white inter-font ease-in-out duration-500 hover:text-green-color/[.8];
+            }
         }
     </style>
     <!-- Theme Style Ends Here -->
@@ -207,30 +274,32 @@
         <!-- Offer Area Starts Here -->
         <section class="px-3 xl:px-5 section-gap">
             <h3 class="section-title mb-12">Best offers for you</h3>
-            <div class="grid grid-cols-2 gap-6">
-                <div class="offer-card bg-[#FFBF0F] border border-[#FFBF0F]">
-                    <div>
-                        <h2>15% OFF</h2>
-                        <h3>on your next purchase</h3>
-                        <h4>use by January 2024</h4>
+            <div class="container mx-auto">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="offer-card bg-[#FFBF0F] border border-[#FFBF0F]">
+                        <div>
+                            <h2>15% OFF</h2>
+                            <h3>on your next purchase</h3>
+                            <h4>use by January 2024</h4>
+                        </div>
+                        <div>
+                            <h5>NEW15</h5>
+                            <h6>Coupon Code</h6>
+                        </div>
+                        <div class="offer-card-ball"></div>
                     </div>
-                    <div>
-                        <h5>NEW15</h5>
-                        <h6>Coupon Code</h6>
+                    <div class="offer-card">
+                        <div>
+                            <h2>20% OFF</h2>
+                            <h3>on your next purchase</h3>
+                            <h4>use by January 2024</h4>
+                        </div>
+                        <div>
+                            <h5>Couple 20</h5>
+                            <h6>Coupon Code</h6>
+                        </div>
+                        <div class="offer-card-ball"></div>
                     </div>
-                    <div class="offer-card-ball"></div>
-                </div>
-                <div class="offer-card">
-                    <div>
-                        <h2>20% OFF</h2>
-                        <h3>on your next purchase</h3>
-                        <h4>use by January 2024</h4>
-                    </div>
-                    <div>
-                        <h5>Couple 20</h5>
-                        <h6>Coupon Code</h6>
-                    </div>
-                    <div class="offer-card-ball"></div>
                 </div>
             </div>
             <div class="mt-14 text-center">
@@ -243,14 +312,102 @@
 
         <!-- Paribahan Area Starts Here -->
         <section class="px-3 xl:px-5 paribahan-area">
-
+            <h3 class="section-title mb-6">P.H Paribahan</h3>
+            <p class="font-normal text-lg text-dark-color/[.6] inter-font text-center max-w-[736px] mx-auto mb-12">
+                Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
+            </p>
+            <div class="container mx-auto">
+                <div class="paribahan-info">
+                    <div class="paribahan-info-start">
+                        <div class="paribahan-top">
+                            <div class="flex gap-3">
+                                <img src="assets/images/paribahan/bus.png" alt="Image">
+                                <div>
+                                    <h3>Greenline Paribahan</h3>
+                                    <p>Coach-009-WEB ! AC_Business</p>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)" class="flex items-center p-4 rounded-xl bg-green-color/[.15] text-green-color font-medium text-lg inter-font">
+                                    <span class="mr-2">
+                                        <img src="assets/images/icons/seat-green-outline.png" alt="Icon">
+                                    </span>
+                                    40 Seats left
+                                </a>
+                            </div>
+                        </div>
+                        <div class="paribahan-info-main">
+                            <div class="paribahan-info-main-content">
+                                <p>Route</p>
+                                <h6>Dhaka - Sylhet</h6>
+                            </div>
+                            <div class="paribahan-info-main-content">
+                                <p>Departure Time</p>
+                                <h6>9:00 PM</h6>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center gap-6">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                    Boarding Point - Laxmipur
+                                </a>
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                    Dropping Point - Bogura
+                                </a>
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                    Est. Time - 11 Hour
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paribahan-info-end">
+                        <div class="text-center pl-4">
+                            <img src="assets/images/icons/taka.png" alt="Icon" class="mx-auto">
+                            <h4>550 Taka</h4>
+                            <p>Per Seat</p>
+                        </div>
+                    </div>
+                    <div class="paribahan-info-ball"></div>
+                </div>
+            </div>
         </section>
         <!-- Paribahan Area Ends Here -->
     </main>
     <!-- Main Ends Here -->
 
     <!-- Footer Starts Here -->
-    
+    <footer class="px-3 xl:px-5 footer">
+        <div class="container mx-auto">
+            <div class="footer-top">
+                <div>
+                    <img src="assets/images/logo-light.png" alt="Logo">
+                    <p class="mt-4">
+                        P-Ticket is a digital platform to make your daily commuting better.
+                    </p>
+                </div>
+                <div>
+                    <h6 class="mb-4">Download our app</h6>
+                    <a href="#" class="inline-block border border-white rounded-md">
+                        <img src="assets/images/icons/playstore.png" alt="Icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    <span>&copy;</span>all rights reserved, P-Ticket services limited.2024
+                </p>
+                <div>
+                    <a href="#" class="inline-block">
+                        Terms & condition
+                    </a>
+                    <a href="#" class="inline-block mx-8">
+                        Return & refund policy
+                    </a>
+                    <a href="#" class="inline-block">
+                        Privacy policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Footer Ends Here -->
 </body>
 </html>
