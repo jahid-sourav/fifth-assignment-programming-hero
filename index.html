@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P-Ticket</title>
+    <!-- Favicon Link Starts Here -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Favicon Link Ends Here -->
+
+    <!-- Google Font CDN Link Starts Here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Google Font CDN Link Ends Here -->
+
+    <!-- DaisyUi CDN Link Starts Here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css">
+    <!-- DaisyUi CDN Link Ends Here -->
+
+    <!-- Tailwind CSS CDN Link Starts Here -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN Link Ends Here -->
+
+    <!-- Tailwind CSS Config Starts Here -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        raleway: ["Raleway", "sans-serif"],
+                    },
+                    colors: {
+                       'green-color' : '#1DD100',
+                       'dark-color'  : '#030712',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Tailwind CSS Config Ends Here -->
+
+    <!-- Theme Style Starts Here -->
+    <style type="text/tailwindcss">
+        .inter-font{
+            font-family: "Inter", sans-serif;
+        }
+        @layer base{
+            html {
+                font-family: "Raleway", sans-serif;
+            }
+        }
+        @layer components{
+            .navbar-link{
+                @apply text-dark-color/[.7] font-medium text-[18px] leading-5 capitalize ease-in-out duration-500 hover:text-green-color;
+            }
+            .navbar-link.active{
+                @apply text-green-color;
+            }
+        }
+    </style>
+    <!-- Theme Style Ends Here -->
+</head>
+<body>
+    <!-- Header Starts Here -->
+    <header class="px-3 xl:px-5 pt-5 xl:pt-10">
+        <div class="container mx-auto">
+            <!-- Nav Starts Here -->
+            <nav class="flex items-center justify-between">
+                <!-- Navbar Left Starts Here -->
+                <div>
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Logo" class="inline-block">
+                    </a>
+                </div>
+                <!-- Navbar Left Ends Here -->
+
+                <!-- Navbar Links Starts Here -->
+                <ul class="flex items-center gap-11">
+                    <li><a href="index.html" class="navbar-link active">Home</a></li>
+                    <li><a href="#" class="navbar-link">About</a></li>
+                    <li><a href="#" class="navbar-link">Destination</a></li>
+                    <li><a href="#" class="navbar-link">Search</a></li>
+                </ul>
+                <!-- Navbar Links Ends Here -->
+
+                <!-- Navbar Right Starts Here -->
+                <div>
+                    <a href="#" class="raleway-font flex items-center gap-x-2 px-7 py-4 border border-green-color/[.4] rounded-xl bg-green-color/[.1] font-bold text-[20px] leading-6 text-green-color">
+                        Bus
+                        <span>
+                            <img src="assets/images/icons/bus.png" alt="Icon">
+                        </span>
+                    </a>
+                </div>
+                <!-- Navbar Right Ends Here -->
+            </nav>
+            <!-- Nav Ends Here -->
+        </div>
+    </header>
+    <!-- Header Ends Here -->
+
+    <!-- Main Starts Here -->
+
+    <!-- Main Ends Here -->
+
+    <!-- Footer Starts Here -->
+    
+    <!-- Footer Ends Here -->
+</body>
+</html>
