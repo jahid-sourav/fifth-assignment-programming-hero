@@ -91,6 +91,8 @@ const coupleCouponCode = getInnerText(elementById('coupleCoupon'));
 const applyCouponArea = elementById('applyCouponArea');
 const couponInputElement = elementById('couponInput');
 const discountInfo = elementById('discountInfo');
+const passengerName = elementById('passengerName'); 
+const passengerEmail = elementById('passengerEmail');
 // Variables Ends Here 
 
 // Seat Number Iteration Starts Here 
@@ -140,6 +142,8 @@ nextButtonElement.addEventListener('click', function(){
     passengerNumberElement.value = '';
     discountInfo.innerHTML = '';
     removeClass(applyCouponArea, 'hidden');
+    passengerName.value = '';
+    passengerEmail.value = '';
 })
 // After Next Button Clicking Functionality Ends Here
 
