@@ -208,13 +208,13 @@
                 <!-- Navbar Left Starts Here -->
                 <div>
                     <a href="index.html">
-                        <img src="assets/images/logo.png" alt="Logo" class="inline-block">
+                        <img src="assets/images/logo.png" alt="Logo" class="inline-block w-[100px] md:w-auto">
                     </a>
                 </div>
                 <!-- Navbar Left Ends Here -->
 
                 <!-- Navbar Links Starts Here -->
-                <ul class="flex items-center gap-11">
+                <ul class="hidden md:flex md:items-center md:gap-11">
                     <li><a href="index.html" class="navbar-link active">Home</a></li>
                     <li><a href="#" class="navbar-link">About</a></li>
                     <li><a href="#" class="navbar-link">Destination</a></li>
@@ -223,7 +223,7 @@
                 <!-- Navbar Links Ends Here -->
 
                 <!-- Navbar Right Starts Here -->
-                <div>
+                <div class="hidden md:block">
                     <a href="#" class="raleway-font flex items-center gap-x-2 px-7 py-4 border border-green-color/[.4] rounded-xl bg-green-color/[.1] font-bold text-[20px] leading-6 text-green-color">
                         Bus
                         <span>
@@ -231,12 +231,42 @@
                         </span>
                     </a>
                 </div>
+
+                <!-- Hamburger Starts Here -->
+                <div class="block md:hidden">
+                    <div class="drawer w-auto">
+                        <input id="hamburger" type="checkbox" class="drawer-toggle"/>
+                        <div class="drawer-content">
+                            <label for="hamburger" class="cursor-pointer">
+                            <img src="assets/images/icons/hamburger.svg" alt="Icon" class="w-[30px]">
+                            </label>
+                        </div>
+                        <div class="drawer-side overflow-hidden z-10">
+                            <label for="hamburger" aria-label="close sidebar" class="drawer-overlay"></label>
+                            <ul class="menu p-4 w-[80%] min-h-full bg-base-200 text-base-content gap-y-4">
+                                <li><a href="index.html" class="navbar-link active">Home</a></li>
+                                <li><a href="#" class="navbar-link">About</a></li>
+                                <li><a href="#" class="navbar-link">Destination</a></li>
+                                <li><a href="#" class="navbar-link">Search</a></li>
+                                <li>
+                                    <a href="#" class="raleway-font flex items-center justify-center gap-x-2 px-7 py-4 border border-green-color/[.4] rounded-xl bg-green-color/[.1] font-bold text-[20px] leading-6 text-green-color">
+                                        Bus
+                                        <span>
+                                            <img src="assets/images/icons/bus.png" alt="Icon">
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hamburger Ends Here -->
                 <!-- Navbar Right Ends Here -->
             </nav>
             <!-- Nav Ends Here -->
 
             <!-- Banner Starts Here -->
-            <div class="bg-[linear-gradient(180deg,rgba(3,7,18,0.5),rgba(3,7,18,0)),url('assets/images/banner/banner.png')] bg-center bg-no-repeat bg-cover rounded-[32px] flex justify-center pt-16 pb-32">
+            <div class="hidden bg-[linear-gradient(180deg,rgba(3,7,18,0.5),rgba(3,7,18,0)),url('assets/images/banner/banner.png')] bg-center bg-no-repeat bg-cover rounded-[32px] flex justify-center pt-16 pb-32">
                 <div>
                     <h2 class="font-extrabold text-[64px] leading-[86px] text-white text-center max-w-[742px] mx-auto">
                         End-to-End Travel with <span class="text-green-color">P Paribahan</span>
@@ -257,7 +287,7 @@
     <!-- Header Ends Here -->
 
     <!-- Main Starts Here -->
-    <main>
+    <main class="hidden">
         <!-- Intro Section Starts Here -->
         <section class="px-3 xl:px-5 section-gap mt-[-70px]">
             <div class="container mx-auto">
@@ -615,7 +645,7 @@
     <!-- Main Ends Here -->
 
     <!-- Modal Starts Here -->
-    <section class="after-purchase h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
+    <section class="hidden after-purchase h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
         <div class="bg-white rounded-2xl p-10">
             <img src="assets/images/icons/tick.png" alt="Icon" class="mx-auto">
             <h4 class="text-center text-[#27AE60] inter-font font-bold text-2xl my-8">
@@ -644,7 +674,7 @@
     <!-- Modal Ends Here -->
 
     <!-- Footer Starts Here -->
-    <footer class="px-3 xl:px-5 footer">
+    <footer class="px-3 xl:px-5 footer hidden">
         <div class="container mx-auto">
             <div class="footer-top">
                 <div>
