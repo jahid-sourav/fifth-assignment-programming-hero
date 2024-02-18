@@ -157,7 +157,7 @@
                 @apply absolute content-[''] right-[320px] top-[0px] h-[1px] w-[80px] bg-white rounded-full;
             }
             .seat-info::after{
-                @apply absolute content-[''] lg:right-[420px] xl:right-[530px] top-[32px] h-[94%] w-[2px] bg-transparent border-0 lg:border border-dashed border-dark-color/[.3] rounded-full;
+                @apply absolute content-[''] lg:right-[420px] xl:right-[530px] top-[32px] h-[94%] w-[2px] bg-transparent border-0 lg:border 2xl:border-0 border-dashed border-dark-color/[.3] rounded-full;
             }
             .seat-info h4{
                 @apply font-semibold text-xl md:text-2xl text-dark-color;
@@ -175,19 +175,19 @@
                 @apply col-start-1 col-end-13 lg:col-start-8 lg:col-end-13;
             }
             .footer{
-                @apply py-28 bg-dark-color;
+                @apply py-8 lg:py-28 bg-dark-color;
             }
             .footer-top{
-                @apply mb-12 flex justify-between items-center w-full;
+                @apply mb-6 lg:mb-12 flex justify-between items-center w-full flex-wrap gap-6;
             }
             .footer-top p{
-                @apply inter-font text-white/[.8] font-normal text-lg max-w-[374px];
+                @apply inter-font text-white/[.8] font-normal text-base lg:text-lg max-w-[374px];
             }
             .footer-top h6{
                 @apply font-semibold text-xl text-white;
             }
             .footer-bottom{
-                @apply pt-8 border-t border-dashed border-white/[.3] w-full flex justify-between items-center;
+                @apply pt-8 border-t border-dashed border-white/[.3] w-full flex justify-between items-center flex-wrap gap-6;
             }
             .footer-bottom p{
                 @apply font-normal text-[16px] text-white/[.7] inter-font;
@@ -645,27 +645,27 @@
     <!-- Main Ends Here -->
 
     <!-- Modal Starts Here -->
-    <section class="hidden after-purchase h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
-        <div class="bg-white rounded-2xl p-10">
+    <section class="after-purchase h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
+        <div class="bg-white rounded-2xl p-4 lg:p-10">
             <img src="assets/images/icons/tick.png" alt="Icon" class="mx-auto">
-            <h4 class="text-center text-[#27AE60] inter-font font-bold text-2xl my-8">
+            <h4 class="text-center text-[#27AE60] inter-font font-bold text-2xl my-4 lg:my-8">
                 SUCCESS
             </h4>
-            <p class="text-center inter-font font-medium text-xl text-[#4A4A4A]">
+            <p class="text-center inter-font font-medium text-base lg:text-xl text-[#4A4A4A]">
                 <strong>
                     Thank you for Booking Our Bus Seats. 
                 </strong> 
             </p>
-            <p class="text-center inter-font font-medium text-xl text-[#4A4A4A]">
+            <p class="text-center inter-font font-medium text-base lg:text-xl text-[#4A4A4A]">
                 <strong>
                     We are working hard to find the best service and deals for you.
                 </strong>
             </p>
-            <p class="text-center inter-font font-normal text-xl text-[#4A4A4A] mt-3 mb-5">
+            <p class="text-center inter-font font-normal text-base lg:text-xl text-[#4A4A4A] mt-3 mb-5">
                 Shortly you will find a confirmation in your email.
             </p>
             <div class="text-center">
-                <button type="button" class="bg-[#27AE60] py-4 px-20 inline-block rounded-[32px] text-white font-semibold text-xl inter-font" id="continueButton">
+                <button type="button" class="bg-[#27AE60] py-3 lg:py-4 px-10 lg:px-20 inline-block rounded-[32px] text-white font-semibold text-xl inter-font" id="continueButton">
                     Continue
                 </button>
             </div>
@@ -674,7 +674,7 @@
     <!-- Modal Ends Here -->
 
     <!-- Footer Starts Here -->
-    <footer class="px-3 xl:px-5 footer hidden">
+    <footer class="px-3 xl:px-5 footer">
         <div class="container mx-auto">
             <div class="footer-top">
                 <div>
@@ -694,11 +694,11 @@
                 <p>
                     <span>&copy;</span>all rights reserved, P-Ticket services limited.2024
                 </p>
-                <div>
+                <div class="flex flex-wrap gap-3 sm:block sn:flex-nowrap sm:gap-0">
                     <a href="#" class="inline-block">
                         Terms & condition
                     </a>
-                    <a href="#" class="inline-block mx-8">
+                    <a href="#" class="inline-block sm:mx-8">
                         Return & refund policy
                     </a>
                     <a href="#" class="inline-block">
