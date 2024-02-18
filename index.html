@@ -104,16 +104,16 @@
                 @apply py-28 bg-[#F7F8F8] border-t-[2px] border-t-green-color rounded-t-[88px];
             }
             .paribahan-info{
-                @apply bg-white p-8 rounded-3xl relative grid grid-cols-2 items-center gap-20;
+                @apply bg-white p-8 rounded-3xl relative grid grid-cols-12 items-center gap-20;
             }
             .paribahan-info::before{
-                @apply absolute content-[''] right-[218px] top-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+                @apply absolute content-[''] right-[320px] top-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
             }
             .paribahan-info::after{
-                @apply absolute content-[''] h-[75%] w-[1px] bg-transparent border-[2px] border-dashed border-green-color right-[257px] top-[50%] translate-y-[-50%];
+                @apply absolute content-[''] h-[75%] w-[1px] bg-transparent border-[2px] border-dashed border-green-color right-[355px] top-[50%] translate-y-[-50%];
             }
             .paribahan-info-ball{
-                @apply absolute right-[218px] bottom-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+                @apply absolute right-[320px] bottom-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
             }
             .paribahan-info-start{
                 @apply col-start-1 col-end-9;
@@ -148,6 +148,30 @@
             }
             .paribahan-info-end p{
                 @apply font-semibold text-2xl text-dark-color/[.6];
+            }
+            .seat-info{
+                @apply mt-6 p-8 rounded-3xl bg-white relative grid grid-cols-12 gap-16;
+            }
+            .seat-info::before{
+                @apply absolute content-[''] right-[320px] top-[0px] h-[1px] w-[80px] bg-white rounded-full;
+            }
+            .seat-info::after{
+                @apply absolute content-[''] right-[530px] top-[32px] h-[94%] w-[2px] bg-transparent border border-dashed border-dark-color/[.3] rounded-full;
+            }
+            .seat-info h4{
+                @apply font-semibold text-2xl text-dark-color;
+            }
+            .seat-info-start{
+                @apply col-start-1 col-end-8;
+            }
+            .serial-letter{
+                @apply inter-font font-medium text-lg text-dark-color/[.5] w-[10px];
+            }
+            .seat-number{
+                @apply px-10 py-5 bg-[#F7F8F8] rounded-xl inter-font font-medium text-lg text-dark-color/[.5] w-[110px] text-center;
+            }
+            .seat-info-end{
+                @apply col-start-8 col-end-13;
             }
             .footer{
                 @apply py-28 bg-dark-color;
@@ -346,20 +370,20 @@
                                 <h6>9:00 PM</h6>
                             </div>
                             <div class="mt-6 flex justify-between items-center gap-6">
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
                                     Boarding Point - Laxmipur
                                 </a>
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
                                     Dropping Point - Bogura
                                 </a>
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 min-w-[232px] text-center">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
                                     Est. Time - 11 Hour
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="paribahan-info-end">
-                        <div class="text-center pl-4">
+                        <div class="text-center">
                             <img src="assets/images/icons/taka.png" alt="Icon" class="mx-auto">
                             <h4>550 Taka</h4>
                             <p>Per Seat</p>
@@ -367,11 +391,273 @@
                     </div>
                     <div class="paribahan-info-ball"></div>
                 </div>
+                <div class="seat-info">
+                    <div class="seat-info-start">
+                        <h4>Select Your Seat</h4>
+                        <div class="flex justify-between items-center my-4 py-4 border border-dashed border-dark-color-[.2] border-x-0">
+                            <div class="flex items-center">
+                                <span class="mr-2">
+                                    <img src="assets/images/icons/available-seat.png" alt="Icon" class="inline-block">
+                                </span>
+                                <span class="font-medium text-lg text-dark-color/[.5]">
+                                    Available
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="mr-2">
+                                    <img src="assets/images/icons/selected-seat.png" alt="Icon" class="inline-block">
+                                </span>
+                                <span class="font-medium text-lg text-dark-color/[.5]">
+                                    Selected
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mb-6">
+                            <div class="py-4 px-11 flex justify-center bg-dark-color/[.1] rounded-xl">
+                                <img src="assets/images/icons/steering.png" alt="Icon">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">A</p>
+                                <button class="seat-number">A1</button>
+                                <button class="seat-number">A2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">A3</button>
+                                <button class="seat-number">A4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">B</p>
+                                <button class="seat-number">B1</button>
+                                <button class="seat-number">B2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">B3</button>
+                                <button class="seat-number">B4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">C</p>
+                                <button class="seat-number">C1</button>
+                                <button class="seat-number">C2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">C3</button>
+                                <button class="seat-number">C4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">D</p>
+                                <button class="seat-number">D1</button>
+                                <button class="seat-number">D2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">D3</button>
+                                <button class="seat-number">D4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">E</p>
+                                <button class="seat-number">E1</button>
+                                <button class="seat-number">E2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">E3</button>
+                                <button class="seat-number">E4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">F</p>
+                                <button class="seat-number">F1</button>
+                                <button class="seat-number">F2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">F3</button>
+                                <button class="seat-number">F4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">G</p>
+                                <button class="seat-number">G1</button>
+                                <button class="seat-number">G2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">G3</button>
+                                <button class="seat-number">G4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">H</p>
+                                <button class="seat-number">H1</button>
+                                <button class="seat-number">H2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">H3</button>
+                                <button class="seat-number">H4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">I</p>
+                                <button class="seat-number">I1</button>
+                                <button class="seat-number">I2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">I3</button>
+                                <button class="seat-number">I4</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-8">
+                                <p class="serial-letter">J</p>
+                                <button class="seat-number">J1</button>
+                                <button class="seat-number">J2</button>
+                            </div>
+                            <div class="flex items-center justify-between gap-8">
+                                <button class="seat-number">J3</button>
+                                <button class="seat-number">J4</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seat-info-end">
+                        <h4 class="pb-4 border-b border-dashed border-dark-color-[.2]">
+                            Select Your Seat
+                        </h4>
+                        <div class="mt-6 p-8 bg-[#F7F8F8] rounded-xl">
+                            <div class="grid grid-cols-3 gap-32 pb-4 mb-4 border-b border-dashed border-dark-color-[.2]">
+                                <div class="flex items-start gap-x-1">
+                                    <h5 class="inter-font font-medium text-[16] text-dark-color">
+                                        Seat
+                                    </h5>
+                                    <div class="py-1 px-2 bg-green-color rounded-[5px] font-bold inter-font text-white text-[12px] leading-3"> 
+                                        <span id="count">2</span>
+                                    </div>
+                                </div>
+                                <h5 class="inter-font font-medium text-[16] text-dark-color">
+                                    Class
+                                </h5>
+                                <h5 class="inter-font font-medium text-[16] text-dark-color">
+                                    Price
+                                </h5>
+                            </div>
+                            <div class="grid grid-cols-3 gap-32">
+                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                                    C2
+                                </h5>
+                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                                    Economoy
+                                </h5>
+                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                                    550
+                                </h5>
+                            </div>
+                            <div class="my-4 pt-4 border-t border-dashed border-dark-color-[.2] flex justify-between">
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    Total Price
+                                </h5>
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    BDT 1100
+                                </h5>
+                            </div>
+                            <div class="my-4 pt-4 border-t border-dashed border-dark-color-[.2] flex justify-between">
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    Discounted Price
+                                </h5>
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    BDT 1100
+                                </h5>
+                            </div>
+                            <div class="relative">
+                                <input type="text" class="w-full outline-0 p-5 bg-white rounded-xl inter-font font-normal text-[14px]" placeholder="Have any copupon?">
+                                <button type="button" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="mt-6 flex justify-between">
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    Grand Total
+                                </h5>
+                                <h5 class="inter-font font-medium text-dark-color">
+                                    BDT 1100
+                                </h5>
+                            </div>
+                        </div>
+                        <form class="mb-6">
+                            <div class="mt-6">
+                                <label for="passengerName" class="inter-font font-semibold text-base text-dark-color">
+                                    Passenger Name*
+                                </label>
+                                <input type="text" id="passengerName" placeholder="Enter your name" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
+                            </div>
+                            <div class="mt-6">
+                                <label for="passengerNumber" class="inter-font font-semibold text-base text-dark-color">
+                                    Phone Number*
+                                </label>
+                                <input type="number" id="passengerNumber" placeholder="Enter your phone number" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
+                            </div>
+                            <div class="mt-6">
+                                <label for="userEmail" class="inter-font font-semibold text-base text-dark-color">
+                                    Email ID
+                                </label>
+                                <input type="email" id="userEmail" placeholder="Enter your email id" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
+                            </div>
+                            <button type="button" class="w-full bg-green-color py-5 mt-6 rounded-2xl font-extrabold text-xl text-white">
+                                Next
+                            </button>
+                        </form>
+                        <div class="flex justify-center gap-x-10">
+                            <a href="#" class="font-normal text-base inter-font text-dark-color/[.6]">
+                                <u>Terms and Conditions</u>
+                            </a>
+                            <a href="#" class="font-normal text-base inter-font text-dark-color/[.6]">
+                                <u>Cancellation Policy</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Paribahan Area Ends Here -->
     </main>
     <!-- Main Ends Here -->
+
+    <!-- Modal Starts Here -->
+    <section class="h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
+        <div class="bg-white rounded-2xl p-10">
+            <img src="assets/images/icons/tick.png" alt="Icon" class="mx-auto">
+            <h4 class="text-center text-[#27AE60] inter-font font-bold text-2xl my-8">
+                SUCCESS
+            </h4>
+            <p class="text-center inter-font font-medium text-xl text-[#4A4A4A]">
+                <strong>
+                    Thank you for Booking Our Bus Seats. 
+                </strong> 
+            </p>
+            <p class="text-center inter-font font-medium text-xl text-[#4A4A4A]">
+                <strong>
+                    We are working hard to find the best service and deals for you.
+                </strong>
+            </p>
+            <p class="text-center inter-font font-normal text-xl text-[#4A4A4A] mt-3 mb-5">
+                Shortly you will find a confirmation in your email.
+            </p>
+            <div class="text-center">
+                <a href="index.html" class="bg-[#27AE60] py-4 px-20 inline-block rounded-[32px] text-white font-semibold text-xl inter-font">
+                    Continue
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Modal Ends Here -->
 
     <!-- Footer Starts Here -->
     <footer class="px-3 xl:px-5 footer">
@@ -409,5 +695,9 @@
         </div>
     </footer>
     <!-- Footer Ends Here -->
+
+    <!-- Script File Link Starts Here -->
+    <script src="assets/scripts/app.js"></script>
+    <!-- Script File Link Ends Here -->
 </body>
 </html>
