@@ -131,10 +131,11 @@ continueButton.addEventListener('click', function(){
     setInnerText(totalPriceElement, totalPrice);
     setInnerText(grandTotalElement, totalPrice);
     seatInfoContainer.innerHTML = '';
+    passengerNumber = '';
+    enableNextButton();
     for(const seatNumber of seatNumbers){
         seatNumber.classList.remove('bg-green-color', 'text-white');
         seatNumber.removeAttribute('disabled');
     }
-    enableNextButton();
 })
 // After Next Button Clicking Functionality Ends Here
