@@ -151,19 +151,19 @@
                 @apply font-semibold text-lg md:text-2xl text-dark-color/[.6];
             }
             .seat-info{
-                @apply mt-6 p-8 rounded-3xl bg-white relative grid grid-cols-12 gap-16;
+                @apply mt-6 p-2 md:p-8 rounded-3xl bg-white relative grid grid-cols-12 gap-4 md:gap-16;
             }
             .seat-info::before{
                 @apply absolute content-[''] right-[320px] top-[0px] h-[1px] w-[80px] bg-white rounded-full;
             }
             .seat-info::after{
-                @apply absolute content-[''] right-[530px] top-[32px] h-[94%] w-[2px] bg-transparent border border-dashed border-dark-color/[.3] rounded-full;
+                @apply absolute content-[''] lg:right-[420px] xl:right-[530px] top-[32px] h-[94%] w-[2px] bg-transparent border-0 lg:border border-dashed border-dark-color/[.3] rounded-full;
             }
             .seat-info h4{
-                @apply font-semibold text-2xl text-dark-color;
+                @apply font-semibold text-xl md:text-2xl text-dark-color;
             }
             .seat-info-start{
-                @apply col-start-1 col-end-8;
+                @apply col-start-1 col-end-13 lg:col-end-8;
             }
             .serial-letter{
                 @apply inter-font font-medium text-lg text-dark-color/[.5] w-[10px];
@@ -422,7 +422,7 @@
                     </div>
                     <div class="paribahan-info-ball"></div>
                 </div>
-                <div class="seat-info hidden">
+                <div class="seat-info">
                     <div class="seat-info-start">
                         <h4>Select Your Seat</h4>
                         <div class="flex justify-between items-center my-4 py-4 border border-dashed border-dark-color-[.2] border-x-0">
@@ -448,118 +448,118 @@
                                 <img src="assets/images/icons/steering.png" alt="Icon">
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">A</p>
                                 <button class="seat-number">A1</button>
                                 <button class="seat-number">A2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">A3</button>
                                 <button class="seat-number">A4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">B</p>
                                 <button class="seat-number">B1</button>
                                 <button class="seat-number">B2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">B3</button>
                                 <button class="seat-number">B4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">C</p>
                                 <button class="seat-number">C1</button>
                                 <button class="seat-number">C2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">C3</button>
                                 <button class="seat-number">C4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">D</p>
                                 <button class="seat-number">D1</button>
                                 <button class="seat-number">D2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">D3</button>
                                 <button class="seat-number">D4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">E</p>
                                 <button class="seat-number">E1</button>
                                 <button class="seat-number">E2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">E3</button>
                                 <button class="seat-number">E4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">F</p>
                                 <button class="seat-number">F1</button>
                                 <button class="seat-number">F2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">F3</button>
                                 <button class="seat-number">F4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">G</p>
                                 <button class="seat-number">G1</button>
                                 <button class="seat-number">G2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">G3</button>
                                 <button class="seat-number">G4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">H</p>
                                 <button class="seat-number">H1</button>
                                 <button class="seat-number">H2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">H3</button>
                                 <button class="seat-number">H4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">I</p>
                                 <button class="seat-number">I1</button>
                                 <button class="seat-number">I2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">I3</button>
                                 <button class="seat-number">I4</button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between gap-6 mb-6">
-                            <div class="flex items-center justify-between gap-8">
+                        <div class="flex flex-wrap items-center justify-end md:justify-between lg:justify-end xl:justify-between gap-4 md:gap-6 mb-6">
+                            <div class="flex items-center justify-between gap-4 md:gap-8">
                                 <p class="serial-letter">J</p>
                                 <button class="seat-number">J1</button>
                                 <button class="seat-number">J2</button>
                             </div>
-                            <div class="flex items-center justify-between gap-8">
+                            <div class="flex flex-wrap items-center justify-between gap-4 md:gap-8">
                                 <button class="seat-number">J3</button>
                                 <button class="seat-number">J4</button>
                             </div>
                         </div>
                     </div>
-                    <div class="seat-info-end">
+                    <div class="seat-info-end hidden">
                         <h4 class="pb-4 border-b border-dashed border-dark-color-[.2]">
                             Select Your Seat
                         </h4>
