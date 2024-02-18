@@ -107,7 +107,7 @@ for(const seatNumber of seatNumbers){
             setInnerText(totalSeatElement, remainingSeat(totalSeat, selectedSeat));
             const div = createAnHtmlElement('div');
             div.innerHTML = `
-                <div class="grid grid-cols-3 gap-32 mt-4">
+                <div class="grid grid-cols-3 gap-2 xl:gap-32 mt-4 justify-items-center xl:justify-items-start">
                     <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
                         ${event.target.innerText}
                     </h5>
