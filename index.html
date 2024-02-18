@@ -102,34 +102,34 @@
                 @apply font-medium text-[13px] md:text-base lg:text-xl text-dark-color/[.4];
             }
             .paribahan-area{
-                @apply py-28 bg-[#F7F8F8] border-t-[2px] border-t-green-color rounded-t-[88px];
+                @apply py-8 lg:py-28 bg-[#F7F8F8] border-t-[2px] border-t-green-color rounded-t-[88px];
             }
             .paribahan-info{
-                @apply bg-white p-8 rounded-3xl relative grid grid-cols-12 items-center gap-20;
+                @apply bg-white p-2 md:p-8 rounded-3xl relative grid grid-cols-12 items-center gap-4 lg:gap-20;
             }
             .paribahan-info::before{
-                @apply absolute content-[''] right-[320px] top-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+                @apply absolute content-[''] right-[320px] top-[-40px] h-[80px] w-0 lg:w-[80px] bg-[#F7F8F8] rounded-full;
             }
             .paribahan-info::after{
-                @apply absolute content-[''] h-[75%] w-[1px] bg-transparent border-[2px] border-dashed border-green-color right-[355px] top-[50%] translate-y-[-50%];
+                @apply absolute content-[''] h-[75%] w-[1px] bg-transparent border-0 lg:border-[2px] border-dashed border-green-color right-[355px] top-[50%] translate-y-[-50%];
             }
             .paribahan-info-ball{
-                @apply absolute right-[320px] bottom-[-40px] h-[80px] w-[80px] bg-[#F7F8F8] rounded-full;
+                @apply absolute right-[320px] bottom-[-40px] h-[80px] w-0 lg:w-[80px] bg-[#F7F8F8] rounded-full;
             }
             .paribahan-info-start{
-                @apply col-start-1 col-end-9;
+                @apply col-start-1 col-end-13 lg:col-end-9;
             }
             .paribahan-top{
-                @apply flex items-center justify-between w-full mb-6;
+                @apply flex flex-col md:flex-row md:items-center md:justify-between w-full mb-4 md:mb-6;
             }
             .paribahan-top h3{
-                @apply font-bold text-3xl text-dark-color ml-2;
+                @apply font-bold text-xl text-center md:text-left md:text-3xl text-dark-color md:ml-2 mb-2 md:mb-0;
             }
             .paribahan-top p{
-                @apply inter-font font-normal text-lg text-dark-color/[.6] ml-2;
+                @apply inter-font font-normal text-center md:text-left text-base md:text-lg text-dark-color/[.6] md:ml-2 mb-3 md:mb-0;
             }
             .paribahan-info-main{
-                @apply  rounded-3xl bg-[#F7F8F8] p-8 pt-2;
+                @apply  rounded-3xl bg-[#F7F8F8] p-2 md:p-8 lg:p-4 xl:p-8 md:pt-2;
             }
             .paribahan-info-main-content{
                 @apply mt-6 pb-6 border-b border-dashed border-dark-color/[.2] flex items-center w-full justify-between; 
@@ -142,13 +142,13 @@
                 @apply text-dark-color;
             }
             .paribahan-info-end{
-                @apply col-start-9 col-end-13;
+                @apply col-start-1 col-end-13 lg:col-start-9 lg:col-end-13;
             }
             .paribahan-info-end h4{
-                @apply font-bold text-3xl text-dark-color my-4;
+                @apply font-bold text-xl md:text-3xl text-dark-color my-2 md:my-4;
             }
             .paribahan-info-end p{
-                @apply font-semibold text-2xl text-dark-color/[.6];
+                @apply font-semibold text-lg md:text-2xl text-dark-color/[.6];
             }
             .seat-info{
                 @apply mt-6 p-8 rounded-3xl bg-white relative grid grid-cols-12 gap-16;
@@ -366,24 +366,24 @@
         <!-- Offer Area Ends Here -->
 
         <!-- Paribahan Area Starts Here -->
-        <section class="hidden px-3 xl:px-5 paribahan-area" id="pParibahan">
-            <h3 class="section-title mb-6">P.H Paribahan</h3>
-            <p class="font-normal text-lg text-dark-color/[.6] inter-font text-center max-w-[736px] mx-auto mb-12">
+        <section class="px-3 xl:px-5 paribahan-area" id="pParibahan">
+            <h3 class="section-title mb-3 md:mb-6">P.H Paribahan</h3>
+            <p class="font-normal text-base md:text-lg text-dark-color/[.6] inter-font text-center md:max-w-[736px] mx-auto mb-4 md:mb-12">
                 Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
             </p>
             <div class="container mx-auto">
                 <div class="paribahan-info">
                     <div class="paribahan-info-start">
                         <div class="paribahan-top">
-                            <div class="flex gap-3">
-                                <img src="assets/images/paribahan/bus.png" alt="Image">
+                            <div class="flex flex-col md:flex-row gap-3">
+                                <img src="assets/images/paribahan/bus.png" alt="Image" class="w-[100px] md:w-auto mx-auto">
                                 <div>
                                     <h3>Greenline Paribahan</h3>
                                     <p>Coach-009-WEB ! AC_Business</p>
                                 </div>
                             </div>
-                            <div>
-                                <a href="javascript:void(0)" class="flex items-center p-4 rounded-xl bg-green-color/[.15] text-green-color font-medium text-lg inter-font">
+                            <div class="text-center md:text-left">
+                                <a href="javascript:void(0)" class="inline-flex md:flex items-center p-4 rounded-xl bg-green-color/[.15] text-green-color font-medium text-lg inter-font">
                                     <span class="mr-2">
                                         <img src="assets/images/icons/seat-green-outline.png" alt="Icon">
                                     </span>
@@ -400,14 +400,14 @@
                                 <p>Departure Time</p>
                                 <h6>9:00 PM</h6>
                             </div>
-                            <div class="mt-6 flex justify-between items-center gap-6">
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
+                            <div class="mt-3 md:mt-6 hidden lg:flex lg:flex-nowrap justify-between items-center gap-2 lg:gap-4 xl:gap-6">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 w-full md:w-auto text-center md:text-left">
                                     Boarding Point - Laxmipur
                                 </a>
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 w-full md:w-auto text-center md:text-left">
                                     Dropping Point - Bogura
                                 </a>
-                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6">
+                                <a href="javascript:void(0)" class="inline-block px-4 py-5 rounded-xl bg-dark-color/[.3] inter-font font-medium text-[16px] leading-6 w-full md:w-auto text-center md:text-left">
                                     Est. Time - 11 Hour
                                 </a>
                             </div>
@@ -422,7 +422,7 @@
                     </div>
                     <div class="paribahan-info-ball"></div>
                 </div>
-                <div class="seat-info">
+                <div class="seat-info hidden">
                     <div class="seat-info-start">
                         <h4>Select Your Seat</h4>
                         <div class="flex justify-between items-center my-4 py-4 border border-dashed border-dark-color-[.2] border-x-0">
