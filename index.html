@@ -49,6 +49,7 @@
         @layer base{
             html {
                 font-family: "Raleway", sans-serif;
+                scroll-behavior: smooth;
             }
         }
         @layer components{
@@ -244,7 +245,7 @@
                         Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
                     </p>
                     <div class="text-center">
-                        <a href="#" class="inline-block bg-green-color py-5 px-7 rounded-xl font-bold text-xl text-dark-color">
+                        <a href="#pParibahan" class="inline-block bg-green-color py-5 px-7 rounded-xl font-bold text-xl text-dark-color">
                             Buy Tickets
                         </a>
                     </div>
@@ -307,7 +308,7 @@
                             <h4>use by January 2024</h4>
                         </div>
                         <div>
-                            <h5>NEW15</h5>
+                            <h5 id="newCoupon">NEW15</h5>
                             <h6>Coupon Code</h6>
                         </div>
                         <div class="offer-card-ball"></div>
@@ -319,7 +320,7 @@
                             <h4>use by January 2024</h4>
                         </div>
                         <div>
-                            <h5>Couple 20</h5>
+                            <h5 id="coupleCoupon">Couple 20</h5>
                             <h6>Coupon Code</h6>
                         </div>
                         <div class="offer-card-ball"></div>
@@ -335,7 +336,7 @@
         <!-- Offer Area Ends Here -->
 
         <!-- Paribahan Area Starts Here -->
-        <section class="px-3 xl:px-5 paribahan-area">
+        <section class="px-3 xl:px-5 paribahan-area" id="pParibahan">
             <h3 class="section-title mb-6">P.H Paribahan</h3>
             <p class="font-normal text-lg text-dark-color/[.6] inter-font text-center max-w-[736px] mx-auto mb-12">
                 Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
@@ -356,7 +357,7 @@
                                     <span class="mr-2">
                                         <img src="assets/images/icons/seat-green-outline.png" alt="Icon">
                                     </span>
-                                    40 Seats left
+                                    <span id="totalSeat" class="mr-1">40</span> Seats left
                                 </a>
                             </div>
                         </div>
@@ -385,7 +386,7 @@
                     <div class="paribahan-info-end">
                         <div class="text-center">
                             <img src="assets/images/icons/taka.png" alt="Icon" class="mx-auto">
-                            <h4>550 Taka</h4>
+                            <h4><span id="perSeatPrice">550</span> Taka</h4>
                             <p>Per Seat</p>
                         </div>
                     </div>
@@ -533,13 +534,13 @@
                             Select Your Seat
                         </h4>
                         <div class="mt-6 p-8 bg-[#F7F8F8] rounded-xl">
-                            <div class="grid grid-cols-3 gap-32 pb-4 mb-4 border-b border-dashed border-dark-color-[.2]">
+                            <div class="grid grid-cols-3 gap-32 pb-4 border-b border-dashed border-dark-color-[.2]">
                                 <div class="flex items-start gap-x-1">
                                     <h5 class="inter-font font-medium text-[16] text-dark-color">
                                         Seat
                                     </h5>
                                     <div class="py-1 px-2 bg-green-color rounded-[5px] font-bold inter-font text-white text-[12px] leading-3"> 
-                                        <span id="count">2</span>
+                                        <span id="selectedSeat">0</span>
                                     </div>
                                 </div>
                                 <h5 class="inter-font font-medium text-[16] text-dark-color">
@@ -549,23 +550,13 @@
                                     Price
                                 </h5>
                             </div>
-                            <div class="grid grid-cols-3 gap-32">
-                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                                    C2
-                                </h5>
-                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                                    Economoy
-                                </h5>
-                                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                                    550
-                                </h5>
-                            </div>
+                            <div id="seatInfoContainer"></div>
                             <div class="my-4 pt-4 border-t border-dashed border-dark-color-[.2] flex justify-between">
                                 <h5 class="inter-font font-medium text-dark-color">
                                     Total Price
                                 </h5>
                                 <h5 class="inter-font font-medium text-dark-color">
-                                    BDT 1100
+                                    BDT <span id="totalPrice">0</span>
                                 </h5>
                             </div>
                             <div class="my-4 pt-4 border-t border-dashed border-dark-color-[.2] flex justify-between">
@@ -573,12 +564,12 @@
                                     Discounted Price
                                 </h5>
                                 <h5 class="inter-font font-medium text-dark-color">
-                                    BDT 1100
+                                    BDT 0
                                 </h5>
                             </div>
                             <div class="relative">
                                 <input type="text" class="w-full outline-0 p-5 bg-white rounded-xl inter-font font-normal text-[14px]" placeholder="Have any copupon?">
-                                <button type="button" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]">
+                                <button type="button" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]" disabled>
                                     Apply
                                 </button>
                             </div>
@@ -587,7 +578,7 @@
                                     Grand Total
                                 </h5>
                                 <h5 class="inter-font font-medium text-dark-color">
-                                    BDT 1100
+                                    BDT <span id="grandTotal">0</span>
                                 </h5>
                             </div>
                         </div>
@@ -602,7 +593,7 @@
                                 <label for="passengerNumber" class="inter-font font-semibold text-base text-dark-color">
                                     Phone Number*
                                 </label>
-                                <input type="number" id="passengerNumber" placeholder="Enter your phone number" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
+                                <input type="text" id="passengerNumber" placeholder="Enter your phone number" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
                             </div>
                             <div class="mt-6">
                                 <label for="userEmail" class="inter-font font-semibold text-base text-dark-color">
@@ -610,7 +601,7 @@
                                 </label>
                                 <input type="email" id="userEmail" placeholder="Enter your email id" class="w-full outline-0 mt-4 p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
                             </div>
-                            <button type="button" class="w-full bg-green-color py-5 mt-6 rounded-2xl font-extrabold text-xl text-white">
+                            <button type="button" id="nextButton" class="w-full bg-green-color py-5 mt-6 rounded-2xl font-extrabold text-xl text-white" disabled>
                                 Next
                             </button>
                         </form>
@@ -631,7 +622,7 @@
     <!-- Main Ends Here -->
 
     <!-- Modal Starts Here -->
-    <section class="h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
+    <section class="after-purchase h-screen bg-[#F2F1F1] flex items-center justify-center hidden">
         <div class="bg-white rounded-2xl p-10">
             <img src="assets/images/icons/tick.png" alt="Icon" class="mx-auto">
             <h4 class="text-center text-[#27AE60] inter-font font-bold text-2xl my-8">
@@ -651,9 +642,9 @@
                 Shortly you will find a confirmation in your email.
             </p>
             <div class="text-center">
-                <a href="index.html" class="bg-[#27AE60] py-4 px-20 inline-block rounded-[32px] text-white font-semibold text-xl inter-font">
+                <button type="button" class="bg-[#27AE60] py-4 px-20 inline-block rounded-[32px] text-white font-semibold text-xl inter-font" id="continueButton">
                     Continue
-                </a>
+                </button>
             </div>
         </div>
     </section>
