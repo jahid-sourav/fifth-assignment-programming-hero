@@ -54,7 +54,7 @@
         }
         @layer components{
             .section-gap{
-                @apply pb-28;
+                @apply pb-8 md:pb-28;
             }
             .section-title{
                 @apply text-center font-bold text-[40px] leading-[47px] text-dark-color;
@@ -66,13 +66,13 @@
                 @apply text-green-color;
             }
             .intro-card{
-                @apply p-8 border-b-[3px] border-b-green-color rounded-3xl flex items-center gap-x-4 bg-white;
+                @apply p-4 md:p-3 lg:p-8 border-b-[3px] border-b-green-color rounded-3xl flex items-center gap-x-4 bg-white;
             }
             .intro-card h4{
-                @apply font-bold text-[36px] leading-[44px] text-dark-color mb-2 inter-font;
+                @apply font-bold text-2xl sm:text-xl md:text-2xl lg:text-[36px] lg:leading-[44px] text-dark-color mb-2 inter-font;
             }
             .intro-card p{
-                @apply font-normal text-lg text-dark-color/[.6] inter-font;
+                @apply font-normal text-base sm:text-[11px] md:text-base lg:text-lg text-dark-color/[.6] inter-font;
             }
             .offer-card{
                 @apply p-12 rounded-3xl bg-[#F78C9C] relative flex justify-between items-center;
@@ -287,12 +287,12 @@
     <!-- Header Ends Here -->
 
     <!-- Main Starts Here -->
-    <main class="hidden">
+    <main>
         <!-- Intro Section Starts Here -->
-        <section class="px-3 xl:px-5 section-gap mt-[-70px]">
+        <section class="px-3 xl:px-5 section-gap mt-6 md:mt-[-70px]">
             <div class="container mx-auto">
                 <div class="flex justify-center">
-                    <div class="grid grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2 md:gap-6">
                         <div class="intro-card">
                             <div>
                                 <img src="assets/images/intro/user.png" alt="User Icon">
@@ -327,7 +327,7 @@
         <!-- Intro Section Ends Here -->
 
         <!-- Offer Area Starts Here -->
-        <section class="px-3 xl:px-5 section-gap">
+        <section class="hidden px-3 xl:px-5 section-gap">
             <h3 class="section-title mb-12">Best offers for you</h3>
             <div class="container mx-auto">
                 <div class="grid grid-cols-2 gap-6">
@@ -366,7 +366,7 @@
         <!-- Offer Area Ends Here -->
 
         <!-- Paribahan Area Starts Here -->
-        <section class="px-3 xl:px-5 paribahan-area" id="pParibahan">
+        <section class="hidden px-3 xl:px-5 paribahan-area" id="pParibahan">
             <h3 class="section-title mb-6">P.H Paribahan</h3>
             <p class="font-normal text-lg text-dark-color/[.6] inter-font text-center max-w-[736px] mx-auto mb-12">
                 Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
