@@ -82,8 +82,8 @@ const continueButton = elementById('continueButton');
 
 // Seat Number Iteration Starts Here 
 for(const seatNumber of seatNumbers){
-    seatNumber.addEventListener('click', function(element){
-        element.target.classList.add('bg-green-color', 'text-white');
+    seatNumber.addEventListener('click', function(event){
+        event.target.classList.add('bg-green-color', 'text-white');
         selectedSeat+=1;
         setInnerText(selectedSeatElement, selectedSeat);
         setInnerText(totalSeatElement, remainingSeat(totalSeat, selectedSeat));
@@ -91,7 +91,7 @@ for(const seatNumber of seatNumbers){
         div.innerHTML = `
             <div class="grid grid-cols-3 gap-32 mt-4">
                 <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                    ${element.target.innerText}
+                    ${event.target.innerText}
                 </h5>
                 <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
                     Economoy
@@ -105,6 +105,7 @@ for(const seatNumber of seatNumbers){
         totalPrice+=perSeatPrice;
         setInnerText(totalPriceElement, totalPrice);
         setInnerText(grandTotalElement, totalPrice);
+        event.target.setAttribute('disabled', true);
         enableNextButton();
     });
 }
@@ -132,6 +133,8 @@ continueButton.addEventListener('click', function(){
     seatInfoContainer.innerHTML = '';
     for(const seatNumber of seatNumbers){
         seatNumber.classList.remove('bg-green-color', 'text-white');
+        seatNumber.removeAttribute('disabled');
     }
+    enableNextButton();
 })
 // After Next Button Clicking Functionality Ends Here
