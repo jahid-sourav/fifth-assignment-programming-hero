@@ -44,6 +44,13 @@ function enableNextButton() {
         nextButtonElement.setAttribute('disabled', true);
     }
 }
+function enableApplyButton() {
+    if (selectedSeat === 4) {
+        applyButton.removeAttribute('disabled');
+    } else {
+        applyButton.setAttribute('disabled', true);
+    }
+}
 function addClass(element, nameOfTheClass){
     element.classList.add(nameOfTheClass);
 }
@@ -78,35 +85,48 @@ const mainElement = elementByQuerySelector('main');
 const footerElement = elementByQuerySelector('footer');
 const afterPurchase = elementByQuerySelector('.after-purchase');
 const continueButton = elementById('continueButton');
+const applyButton = elementById('applyButton');
+const newCouponCode = getInnerText(elementById('newCoupon'));
+const coupleCouponCode = getInnerText(elementById('coupleCoupon'));
+const applyCouponArea = elementById('applyCouponArea');
+const couponInputElement = elementById('couponInput');
+const discountInfo = elementById('discountInfo');
 // Variables Ends Here 
 
 // Seat Number Iteration Starts Here 
+let selectedSeatCount = 0;
 for(const seatNumber of seatNumbers){
     seatNumber.addEventListener('click', function(event){
-        event.target.classList.add('bg-green-color', 'text-white');
-        selectedSeat+=1;
-        setInnerText(selectedSeatElement, selectedSeat);
-        setInnerText(totalSeatElement, remainingSeat(totalSeat, selectedSeat));
-        const div = createAnHtmlElement('div');
-        div.innerHTML = `
-            <div class="grid grid-cols-3 gap-32 mt-4">
-                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                    ${event.target.innerText}
-                </h5>
-                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                    Economoy
-                </h5>
-                <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
-                    ${perSeatPrice}
-                </h5>
-            </div>
-        `;
-        appendContent(seatInfoContainer, div);
-        totalPrice+=perSeatPrice;
-        setInnerText(totalPriceElement, totalPrice);
-        setInnerText(grandTotalElement, totalPrice);
-        event.target.setAttribute('disabled', true);
-        enableNextButton();
+        if (selectedSeatCount < 4) {
+            event.target.classList.add('bg-green-color', 'text-white');
+            selectedSeat+=1;
+            selectedSeatCount+=1;
+            setInnerText(selectedSeatElement, selectedSeat);
+            setInnerText(totalSeatElement, remainingSeat(totalSeat, selectedSeat));
+            const div = createAnHtmlElement('div');
+            div.innerHTML = `
+                <div class="grid grid-cols-3 gap-32 mt-4">
+                    <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                        ${event.target.innerText}
+                    </h5>
+                    <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                        Economoy
+                    </h5>
+                    <h5 class="inter-font font-normal text-[16px] text-dark-color/[.6]">
+                        ${perSeatPrice}
+                    </h5>
+                </div>
+            `;
+            appendContent(seatInfoContainer, div);
+            totalPrice+=perSeatPrice;
+            setInnerText(totalPriceElement, totalPrice);
+            setInnerText(grandTotalElement, totalPrice);
+            event.target.setAttribute('disabled', true);
+            enableNextButton();
+            enableApplyButton();
+        } else {
+            alert('You Can Select A Maximum Of 4 Seat.');
+        }
     });
 }
 // Seat Number Iteration Ends Here 
@@ -118,13 +138,19 @@ nextButtonElement.addEventListener('click', function(){
     addClass(footerElement, 'hidden');
     removeClass(afterPurchase, 'hidden');
     passengerNumberElement.value = '';
+    discountInfo.innerHTML = '';
+    removeClass(applyCouponArea, 'hidden');
 })
+// After Next Button Clicking Functionality Ends Here
+
+// After Continue Button Clicking Functionality Starts Here
 continueButton.addEventListener('click', function(){
     removeClass(headerElement, 'hidden');
     removeClass(mainElement, 'hidden');
     removeClass(footerElement, 'hidden');
     addClass(afterPurchase, 'hidden');
     selectedSeat = 0;
+    selectedSeatCount = 0;
     setInnerText(selectedSeatElement, selectedSeat);
     setInnerText(totalSeatElement, totalSeat);
     totalPrice = 0;
@@ -133,9 +159,55 @@ continueButton.addEventListener('click', function(){
     seatInfoContainer.innerHTML = '';
     passengerNumber = '';
     enableNextButton();
+    enableApplyButton();
     for(const seatNumber of seatNumbers){
         seatNumber.classList.remove('bg-green-color', 'text-white');
         seatNumber.removeAttribute('disabled');
     }
 })
-// After Next Button Clicking Functionality Ends Here
+// After Continue Button Clicking Functionality Ends Here
+
+// After Apply Button Clicking Functionality Starts Here
+applyButton.addEventListener('click', function(){
+    if(couponInputElement.value === newCouponCode){
+        const discountPrice = (totalPrice * 0.15);
+        const div = createAnHtmlElement('div');
+        div.innerHTML = `
+            <div class="my-4 py-4 border-y border-dashed border-dark-color-[.2] flex justify-between">
+                <h5 class="inter-font font-medium text-dark-color">
+                    Discounted Price
+                </h5>
+                <h5 class="inter-font font-medium text-dark-color">
+                    BDT ${parseInt(discountPrice)}
+                </h5>
+            </div>
+        `;
+        discountInfo.append(div);
+        totalPrice -= discountPrice;
+        setInnerText(grandTotalElement, totalPrice);
+        couponInputElement.value = '';
+        addClass(applyCouponArea, 'hidden');
+    }else if(couponInputElement.value === coupleCouponCode){
+        const discountPrice = (totalPrice * 0.20);
+        const div = createAnHtmlElement('div');
+        div.innerHTML = `
+            <div class="my-4 py-4 border-y border-dashed border-dark-color-[.2] flex justify-between">
+                <h5 class="inter-font font-medium text-dark-color">
+                    Discounted Price
+                </h5>
+                <h5 class="inter-font font-medium text-dark-color">
+                    BDT ${parseInt(discountPrice)}
+                </h5>
+            </div>
+        `;
+        discountInfo.append(div);
+        totalPrice -= discountPrice;
+        setInnerText(grandTotalElement, totalPrice);
+        couponInputElement.value = '';
+        addClass(applyCouponArea, 'hidden');
+    }else{
+        couponInputElement.value = '';
+        alert('Invalid coupon code.');
+    }
+});
+// After Apply Button Clicking Functionality Ends Here

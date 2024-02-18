@@ -559,17 +559,10 @@
                                     BDT <span id="totalPrice">0</span>
                                 </h5>
                             </div>
-                            <div class="my-4 pt-4 border-t border-dashed border-dark-color-[.2] flex justify-between">
-                                <h5 class="inter-font font-medium text-dark-color">
-                                    Discounted Price
-                                </h5>
-                                <h5 class="inter-font font-medium text-dark-color">
-                                    BDT 0
-                                </h5>
-                            </div>
-                            <div class="relative">
-                                <input type="text" class="w-full outline-0 p-5 bg-white rounded-xl inter-font font-normal text-[14px]" placeholder="Have any copupon?">
-                                <button type="button" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]" disabled>
+                            <div id="discountInfo"></div>
+                            <div class="relative" id="applyCouponArea">
+                                <input type="text" class="w-full outline-0 p-5 bg-white rounded-xl inter-font font-normal text-[14px]" placeholder="Have any coupon?" id="couponInput">
+                                <button type="button" id="applyButton" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]" disabled>
                                     Apply
                                 </button>
                             </div>
