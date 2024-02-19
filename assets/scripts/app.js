@@ -32,23 +32,36 @@ function appendContent(place, item){
 }
 function validatePassengerNumber(inputFieldValue) {
     if (!regex.test(inputFieldValue)) {
+        addClass(passengerNumberElement, 'border-red-600');
         return false;
     } else {
+        removeClass(passengerNumberElement, 'border-red-600');
         return true;
     }
 }
 function enableNextButton() {
     if (validatePassengerNumber(passengerNumber) && (selectedSeat > 0)) {
         nextButtonElement.removeAttribute('disabled');
+        removeClass(nextButtonElement, 'cursor-not-allowed');
+        removeClass(nextButtonElement, 'opacity-50');
+        errorMessage.innerText = '';
     } else {
         nextButtonElement.setAttribute('disabled', true);
+        addClass(nextButtonElement, 'cursor-not-allowed');
+        addClass(nextButtonElement, 'opacity-50');
+        addClass(errorMessage, 'mt-1');
+        errorMessage.innerText = 'Please Select At least One Seat And Provide A Correct Phone Number';
     }
 }
 function enableApplyButton() {
     if (selectedSeat === 4) {
         applyButton.removeAttribute('disabled');
+        removeClass(applyButton, 'cursor-not-allowed');
+        removeClass(applyButton, 'opacity-50');
     } else {
         applyButton.setAttribute('disabled', true);
+        addClass(applyButton, 'cursor-not-allowed');
+        addClass(applyButton, 'opacity-50');
     }
 }
 function addClass(element, nameOfTheClass){
@@ -93,6 +106,7 @@ const couponInputElement = elementById('couponInput');
 const discountInfo = elementById('discountInfo');
 const passengerName = elementById('passengerName'); 
 const passengerEmail = elementById('passengerEmail');
+const errorMessage = elementById('errorMessage');
 // Variables Ends Here 
 
 // Seat Number Iteration Starts Here 
@@ -164,6 +178,8 @@ continueButton.addEventListener('click', function(){
     passengerNumber = '';
     enableNextButton();
     enableApplyButton();
+    removeClass(passengerNumberElement, 'border-red-600');
+    errorMessage.innerText = '';
     for(const seatNumber of seatNumbers){
         seatNumber.classList.remove('bg-green-color', 'text-white');
         seatNumber.removeAttribute('disabled');

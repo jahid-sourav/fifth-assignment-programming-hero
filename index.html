@@ -593,7 +593,7 @@
                             <div id="discountInfo"></div>
                             <div class="relative" id="applyCouponArea">
                                 <input type="text" class="w-full outline-0 p-5 bg-white rounded-xl inter-font font-normal text-[14px]" placeholder="Have any coupon?" id="couponInput">
-                                <button type="button" id="applyButton" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px]" disabled>
+                                <button type="button" id="applyButton" class="py-2 px-4 bg-green-color rounded-lg inter-font font-semibold text-white absolute top-[50%] translate-y-[-50%] right-[8px] cursor-not-allowed opacity-50" disabled>
                                     Apply
                                 </button>
                             </div>
@@ -617,7 +617,8 @@
                                 <label for="passengerNumber" class="inter-font font-semibold text-base text-dark-color">
                                     Phone Number*
                                 </label>
-                                <input type="text" id="passengerNumber" placeholder="Enter your phone number" class="w-full outline-0 mt-4 p-4 lg:p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
+                                <input type="text" id="passengerNumber" placeholder="Enter your phone number" class="w-full outline-0 mt-4 p-4 lg:p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]" required>
+                                <p id="errorMessage" class="text-red-600 font-bold text-base inter-font"></p>
                             </div>
                             <div class="mt-6">
                                 <label for="passengerEmail" class="inter-font font-semibold text-base text-dark-color">
@@ -625,7 +626,7 @@
                                 </label>
                                 <input type="email" id="passengerEmail" placeholder="Enter your email id" class="w-full outline-0 mt-4 p-4 lg:p-6 rounded-xl border border-dark-color/[.1] inter-font font-normal color-dark-color/[.4]">
                             </div>
-                            <button type="button" id="nextButton" class="w-full bg-green-color  py-3 lg:py-5 mt-6 rounded-2xl font-extrabold text-xl text-white" disabled>
+                            <button type="button" id="nextButton" class="w-full bg-green-color  py-3 lg:py-5 mt-6 rounded-2xl font-extrabold text-xl text-white cursor-not-allowed opacity-50" disabled>
                                 Next
                             </button>
                         </form>
